@@ -2,7 +2,7 @@ import cv2
 import numpy
 import imutils
 from skimage.metrics import structural_similarity
-
+#files
 
 def detect(imageA, imageB):
     imageA = cv2.resize(imageA, (1200, 600), interpolation=cv2.INTER_LINEAR)
