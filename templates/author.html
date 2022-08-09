@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    {% include "nav.html" %}
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Главная</font></font></h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group me-2">
+          </div>
+        </div>
+      </div>
+        <h4>Выберите файл для тестирования и нажмите кнопку "Тест".</h4>
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="test_image">Файл</label>
+            <input type="file" class="form-control-file" id="test_image" name="test_image" required>
+          </div>
+          <button class="btn btn-sm" style="align: center; border: #333333; background: lightgrey; margin-left: 40%; margin-top: 15px;" type="submit">Тест</button>
+        </form>
+    </main>
+  </div>
+</div>
+<style type="text/css">
+        body {
+          font-size: .875rem;
+        }
+
+        .feather {
+          width: 16px;
+          height: 16px;
+          vertical-align: text-bottom;
+        }
+
+        /*
+         * Sidebar
+         */
+
+        .sidebar {
+          position: fixed;
+          top: 0;
+          /* rtl:raw:
+          right: 0;
+          */
+          bottom: 0;
+          /* rtl:remove */
+          left: 0;
+          z-index: 100; /* Behind the navbar */
+          padding: 10px 0 0; /* Height of navbar */
+          box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+        }
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        top: 5rem;
+      }
+    }
+
+    .sidebar-sticky {
+      position: relative;
+      top: 0;
+      height: calc(100vh - 48px);
+      padding-top: .5rem;
+      overflow-x: hidden;
+      overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    }
+
+    .sidebar .nav-link {
+      font-weight: 500;
+      color: #ffffff;
+    }
+
+    .sidebar .nav-link .feather {
+      margin-right: 4px;
+      color: #ffffff;
+    }
+
+    .sidebar .nav-link.active {
+      color: #2470dc;
+    }
+
+    .sidebar .nav-link:hover .feather,
+    .sidebar .nav-link.active .feather {
+      color: inherit;
+    }
+
+    .sidebar-heading {
+      font-size: .75rem;
+      text-transform: uppercase;
+    }
+
+</style>
+{% endblock %}
